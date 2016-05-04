@@ -88,22 +88,30 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="btnPrincipal">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Principal"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/Home-100.png"/>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="btnCitas">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Citas"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/Calendar-100.png"/>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="btnPacientes">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Pacientes"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/Wheelchair-100.png"/>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="btnPersonal">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Personal"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/Doctor Male-100.png"/>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="btnDesconectar">

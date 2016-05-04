@@ -47,13 +47,13 @@ public class Interfaz extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
 
-        btnPrincipal.setText("Principal");
+        btnPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Home-100.png"))); // NOI18N
 
-        btnCitas.setText("Citas");
+        btnCitas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Calendar-100.png"))); // NOI18N
 
-        btnPacientes.setText("Pacientes");
+        btnPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wheelchair-100.png"))); // NOI18N
 
-        btnPersonal.setText("Personal");
+        btnPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Doctor Male-100.png"))); // NOI18N
 
         btnDesconectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Close Window-100.png"))); // NOI18N
 
