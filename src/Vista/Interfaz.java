@@ -27,7 +27,7 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelAdmin = new javax.swing.JFrame();
+        frameAdmin = new javax.swing.JFrame();
         panelBotones = new javax.swing.JPanel();
         btnPrincipal = new javax.swing.JLabel();
         btnCitas = new javax.swing.JLabel();
@@ -38,7 +38,7 @@ public class Interfaz extends javax.swing.JFrame {
         panelCitas = new javax.swing.JPanel();
         panelPacientes = new javax.swing.JPanel();
         panelPersonal = new javax.swing.JPanel();
-        panelMedico = new javax.swing.JFrame();
+        frameMedicos = new javax.swing.JFrame();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
@@ -98,35 +98,35 @@ public class Interfaz extends javax.swing.JFrame {
             .addGap(0, 433, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout panelAdminLayout = new javax.swing.GroupLayout(panelAdmin.getContentPane());
-        panelAdmin.getContentPane().setLayout(panelAdminLayout);
-        panelAdminLayout.setHorizontalGroup(
-            panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout frameAdminLayout = new javax.swing.GroupLayout(frameAdmin.getContentPane());
+        frameAdmin.getContentPane().setLayout(frameAdminLayout);
+        frameAdminLayout.setHorizontalGroup(
+            frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelPpal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(panelBotones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelCitas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE))
-            .addGroup(panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelPacientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE))
-            .addGroup(panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelPersonal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE))
         );
-        panelAdminLayout.setVerticalGroup(
-            panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAdminLayout.createSequentialGroup()
+        frameAdminLayout.setVerticalGroup(
+            frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frameAdminLayout.createSequentialGroup()
                 .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelPpal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAdminLayout.createSequentialGroup()
+            .addGroup(frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameAdminLayout.createSequentialGroup()
                     .addGap(0, 154, Short.MAX_VALUE)
                     .addComponent(panelCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAdminLayout.createSequentialGroup()
+            .addGroup(frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameAdminLayout.createSequentialGroup()
                     .addGap(0, 161, Short.MAX_VALUE)
                     .addComponent(panelPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAdminLayout.createSequentialGroup()
+            .addGroup(frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameAdminLayout.createSequentialGroup()
                     .addGap(0, 154, Short.MAX_VALUE)
                     .addComponent(panelPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
@@ -202,13 +202,13 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel btnPersonal;
     private javax.swing.JLabel btnPrincipal;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JFrame frameAdmin;
+    private javax.swing.JFrame frameMedicos;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblFondo;
-    private javax.swing.JFrame panelAdmin;
     private javax.swing.JPanel panelBotones;
     private javax.swing.JPanel panelCitas;
-    private javax.swing.JFrame panelMedico;
     private javax.swing.JPanel panelPacientes;
     private javax.swing.JPanel panelPersonal;
     private javax.swing.JPanel panelPpal;
