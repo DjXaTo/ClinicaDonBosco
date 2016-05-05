@@ -6,10 +6,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
-    private String db = "";
-    private String user = "";
-    private String password = "";
-    private String url = "";
+    private static String  host = "85.136.228.2";  
+    private String db = "clinica";
+    private String user = "oreo";
+    private String password = "oreo";
+    private String url = "jdbc:mysql://"+host+"/"+db;
     private Connection conn = null;
     
     public void conectar(){
