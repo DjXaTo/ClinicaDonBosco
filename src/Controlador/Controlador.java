@@ -1,26 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
+import Modelo.Modelo;
 import Vista.Interfaz;
 
-/**
- *
- * @author Ciclo
- */
+
 class Controlador {
 
-    
+    Interfaz vista; //PARA PODER ACCEDER A LA INTERFAZ DE LA APLICACIÓN
+    Modelo modelo; //PARA PODER ACCEDER AL MODELO Y A LOS DATOS DE LA BD
 
-    Controlador(Interfaz interfaz) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Controlador(Interfaz i) {
+        vista = i;
     }
-
-    void iniciar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void iniciar() {
+        
     }
     
 }
