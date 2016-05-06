@@ -17,6 +17,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Modelo extends Database {
     
+    
+    public class ModeloTablaNoEditable extends DefaultTableModel {
+
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    }
+    
+    
     public void insertPaciente(String id, int nif, String aseguradora) {
         try {
             String q = "INSERT INTO Paciente (id, nif, aseguradora) VALUES"
@@ -27,9 +36,10 @@ public class Modelo extends Database {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+    }
         
-        public DefaultTableModel tablaPacientes() {
-        DefaultTableModel tablemodel;
+    public DefaultTableModel tablaPacientes() {
+        DefaultTableModel tablemodel = new ModeloTablaNoEditable();
         tablemodel = new DefaultTableModel();
         try {
             tablemodel.addColumn("id");
