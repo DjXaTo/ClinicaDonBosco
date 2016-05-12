@@ -17,57 +17,102 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Modelo extends Database {
     
-    
-    public class ModeloTablaNoEditable extends DefaultTableModel {
+    /** Constructor de clase */
+    public Modelo (){}
 
-        public boolean isCellEditable(int row, int column) {
-            return false;
-        }
-    }
-    
-    
-    public void insertPaciente(String id, int nif, String aseguradora) {
-        try {
-            String q = "INSERT INTO Paciente (id, nif, aseguradora) VALUES"
-                    + " ('" + id + "','" + nif + "','" + aseguradora + "',juan,45678903,Adeslas)";
-            PreparedStatement pstm = this.getConexion().prepareStatement(q);
-            pstm.execute();
-            pstm.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
-        
-    public DefaultTableModel tablaPacientes() {
-        DefaultTableModel tablemodel = new ModeloTablaNoEditable();
-        tablemodel = new DefaultTableModel();
-        try {
-            tablemodel.addColumn("id");
-            tablemodel.addColumn("nif");
-            tablemodel.addColumn("aseguradora");
-
-           
-             String q = "idPaciente, NIF, Aseguradora FROM Paciente";
-            PreparedStatement pstm = this.getConexion().prepareStatement(q);
-            ResultSet res = pstm.executeQuery();
-
-            String[] data = new String[3];
-
-            while (res.next()) {
-                data[0] = res.getString("ID");
-                data[1] = res.getString("NIF");
-                data[2] = res.getString("Aseguradora");
-                tablemodel.addRow(data);
-            }
-
-            res.close();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al obtener datos\n\n" + e.getMessage());
-            e.printStackTrace();
+    /** Obtiene registros de la tabla PRODUCTO y los devuelve en un DefaultTableModel*/
+    public DefaultTableModel getPaciente()
+    {
+      DefaultTableModel tablemodel = new DefaultTableModel();
+      int registros = 0;
+      String[] columNames = {"idPaciente","nif","aseguradora"};
+      //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
+      //para formar la matriz de datos
+      try{
+         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as total FROM Paciente");
+         ResultSet res = pstm.executeQuery();
+         res.next();
+         registros = res.getInt("total");
+         res.close();
+      }catch(SQLException e){
+         System.err.println( e.getMessage() );
+      }
+    //se crea una matriz con tantas filas y columnas que necesite
+    Object[][] data = new String[registros][3];
+      try{
+          //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
+         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT * FROM Paciente");
+         ResultSet res = pstm.executeQuery();
+         int i=0;
+         while(res.next()){
+                data[i][0] = res.getString( "idPaciente" );
+                data[i][1] = res.getString( "nif" );
+                data[i][2] = res.getString( "aseguradora" );
+                
+            i++;
+         }
+         res.close();
+         //se añade la matriz de datos en el DefaultTableModel
+         tablemodel.setDataVector(data, columNames );
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
         }
         return tablemodel;
     }
-}
+
+    /** Registra un nuevo producto */
+    public boolean NuevoPaciente(String idPaciente, int nif , String aseguradora)
+    {
+       
+        
+            
+            //Se arma la consulta
+            String q=" INSERT INTO Paciente ( idPaciente , nif , aseguradora) "
+                    + "VALUES ( '" + idPaciente + "','" + nif + "', '" + aseguradora + ") ";
+            //se ejecuta la consulta
+            try {
+                PreparedStatement pstm = this.getConexion().prepareStatement(q);
+                pstm.execute();
+                pstm.close();
+                return true;
+            }catch(SQLException e){
+                System.err.println( e.getMessage() );
+            }
+            return false;
+        
+        
+    }
+
+
+    /** Elimina un registro dado su ID -> Llave primaria */
+    public boolean EliminarProducto( String idPaciente )
+    {
+         boolean res=false;
+        //se arma la consulta
+        String q = " DELETE FROM Paciente WHERE  idPaciente='" + idPaciente + "'";
+        //se ejecuta la consulta
+         try {
+            PreparedStatement pstm = this.getConexion().prepareStatement(q);
+            pstm.execute();
+            pstm.close();
+            res=true;
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return res;
+    }
+
+    /** Metodo privado para validar datos */
+  }
+        
+        
+       
+         
+    
+    
+
+    
+
 
         
    
