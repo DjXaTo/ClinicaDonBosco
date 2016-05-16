@@ -85,7 +85,7 @@ public class Modelo extends Database {
 
 
     /** Elimina un registro dado su ID -> Llave primaria */
-    public boolean EliminarProducto( String idPaciente )
+    public boolean EliminarPaciente( String idPaciente )
     {
          boolean res=false;
         //se arma la consulta
@@ -103,6 +103,7 @@ public class Modelo extends Database {
     }
 
     /** Metodo privado para validar datos */
+
   }
         
         
