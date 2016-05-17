@@ -8,6 +8,7 @@
 package Modelo;
 
 import java.sql.*;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,7 +19,82 @@ import javax.swing.table.DefaultTableModel;
 public class Modelo extends Database {
     
     /** Constructor de clase */
-    public Modelo (){}
+    public Modelo (){
+    }
+    
+    //MÉTODO INCIO DE SESIÓN
+    public boolean iniciarSesion(String nif, String pass) {
+        String contraseña = "";
+        try {
+            String q = "SELECT pass FROM Personas WHERE nif = '" + nif + "'";
+            PreparedStatement pstm = this.getConexion().prepareStatement(q);
+            ResultSet res = pstm.executeQuery();
+            while (res.next()) {
+                contraseña = res.getString("pass");
+            }
+            res.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al iniciar sesión\n\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        if (pass.equals(contraseña)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    //MÉTODO PARA COMPROBAR SI EL USUARIO INICIADO ES ADMINISTRADOR O MEDICO
+    public boolean esAdmin(String nif) {
+        int ad = 0;
+        try {
+            String q = "SELECT tipo FROM Empleado WHERE nif = '" + nif + "'";
+            PreparedStatement pstm = this.getConexion().prepareStatement(q);
+            ResultSet res = pstm.executeQuery();
+            while (res.next()) {
+                ad = res.getInt("tipo");
+            }
+            res.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al iniciar sesión\n\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        if (ad == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public DefaultListModel listaCitas(String fecha) {
+        DefaultListModel listmodel = new DefaultListModel();
+        try {
+            String q = "SELECT idCita FROM Citas WHERE fecha = '" + fecha + "'";
+            PreparedStatement pstm = this.getConexion().prepareStatement(q);
+            ResultSet res = pstm.executeQuery();
+            while (res.next()) {
+                String cod = String.valueOf(res.getInt("idCita"));
+                listmodel.addElement(cod);
+            }
+            res.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al obtener datos\n\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        return listmodel;
+    }
+    
+    
+    
+    
+    //MÉTODO PARA HACER QUE LAS CELDAS DE LAS TABLAS NO SEAN EDITABLES
+    public class ModeloTablaNoEditable extends DefaultTableModel {
+
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    }
+    
 
     /** Obtiene registros de la tabla PRODUCTO y los devuelve en un DefaultTableModel*/
     public DefaultTableModel getPaciente()
