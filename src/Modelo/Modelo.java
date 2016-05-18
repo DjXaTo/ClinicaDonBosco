@@ -46,20 +46,20 @@ public class Modelo extends Database {
     
     //MÉTODO PARA COMPROBAR SI EL USUARIO INICIADO ES ADMINISTRADOR O MEDICO
     public boolean esAdmin(String nif) {
-        int ad = 0;
+        int admin = 0;
         try {
             String q = "SELECT tipo FROM Empleado WHERE nif = '" + nif + "'";
             PreparedStatement pstm = this.getConexion().prepareStatement(q);
             ResultSet res = pstm.executeQuery();
             while (res.next()) {
-                ad = res.getInt("tipo");
+                admin = res.getInt("tipo");
             }
             res.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al iniciar sesión\n\n" + e.getMessage());
             e.printStackTrace();
         }
-        if (ad == 1) {
+        if (admin == 1) {
             return true;
         } else {
             return false;
