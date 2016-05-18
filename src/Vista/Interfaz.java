@@ -518,17 +518,17 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser DateChoserFecPer;
-    private javax.swing.JLabel btnCitas;
+    public javax.swing.JLabel btnCitas;
     private javax.swing.JButton btnConectar;
-    private javax.swing.JLabel btnDesconectar;
-    private javax.swing.JLabel btnPacientes;
-    private javax.swing.JLabel btnPersonal;
-    private javax.swing.JLabel btnPrincipal;
+    public javax.swing.JLabel btnDesconectar;
+    public javax.swing.JLabel btnPacientes;
+    public javax.swing.JLabel btnPersonal;
+    public javax.swing.JLabel btnPrincipal;
     private javax.swing.JButton btnSalir;
     public javax.swing.JButton btnagregar;
     public javax.swing.JButton btnbuscar;
     public javax.swing.JButton btneliminar;
-    private javax.swing.JFrame frameAdmin;
+    public javax.swing.JFrame frameAdmin;
     private javax.swing.JFrame frameMedicos;
     private javax.swing.JButton jButton1;
     private com.toedter.calendar.JCalendar jCalendar1;
