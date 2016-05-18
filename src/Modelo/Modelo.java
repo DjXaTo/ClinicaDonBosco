@@ -124,7 +124,7 @@ public class Modelo extends Database {
                 }
             res.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al obtener datos de producto\n\n" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al obtener datos de cita\n\n" + e.getMessage());
             e.printStackTrace();
         }
         return info;
