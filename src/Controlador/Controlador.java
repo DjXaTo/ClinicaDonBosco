@@ -54,21 +54,22 @@ public class Controlador implements ActionListener, MouseListener {
         
         vista.btnDesconectar.addMouseListener(new MouseAdapter() {
         
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            vista.frameAdmin.setVisible(false);   
-        }
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                vista.frameAdmin.setVisible(false);
+                //vista.JFrame.setVisible(true);
+            }
 
-        @Override
-        public void mousePressed(MouseEvent e) {
-            vista.btnDesconectar.setBorder(BorderFactory.createLineBorder(Color.black));
-        }
+            @Override
+            public void mousePressed(MouseEvent e) {
+                vista.btnDesconectar.setBorder(BorderFactory.createLineBorder(Color.black));
+            }
 
-        @Override
-        public void mouseReleased(MouseEvent e) {
-            vista.btnDesconectar.setBorder(null);
-        }
-    });
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                vista.btnDesconectar.setBorder(null);
+            }
+        });
         
         
         

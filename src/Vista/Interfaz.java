@@ -75,6 +75,14 @@ public class Interfaz extends javax.swing.JFrame {
         DateChoserFecPer = new com.toedter.calendar.JDateChooser();
         jComboBox3 = new javax.swing.JComboBox();
         frameMedicos = new javax.swing.JFrame();
+        jFrame1 = new javax.swing.JFrame();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        txtUsuario1 = new javax.swing.JTextField();
+        txtPass1 = new javax.swing.JPasswordField();
+        btnConectar1 = new javax.swing.JButton();
+        btnSalir1 = new javax.swing.JButton();
+        lblFondo1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
@@ -436,6 +444,31 @@ public class Interfaz extends javax.swing.JFrame {
 
         frameMedicos.setEnabled(false);
 
+        jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jFrame1.setResizable(false);
+        jFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Usuario");
+        jFrame1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Contraseña");
+        jFrame1.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
+        jFrame1.getContentPane().add(txtUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 274, -1));
+        jFrame1.getContentPane().add(txtPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 274, -1));
+
+        btnConectar1.setText("Conectar");
+        jFrame1.getContentPane().add(btnConectar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+
+        btnSalir1.setText("Salir");
+        jFrame1.getContentPane().add(btnSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, -1, -1));
+
+        lblFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cadena adn.jpg"))); // NOI18N
+        jFrame1.getContentPane().add(lblFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 320));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -520,11 +553,13 @@ public class Interfaz extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser DateChoserFecPer;
     public javax.swing.JLabel btnCitas;
     private javax.swing.JButton btnConectar;
+    private javax.swing.JButton btnConectar1;
     public javax.swing.JLabel btnDesconectar;
     public javax.swing.JLabel btnPacientes;
     public javax.swing.JLabel btnPersonal;
     public javax.swing.JLabel btnPrincipal;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSalir1;
     public javax.swing.JButton btnagregar;
     public javax.swing.JButton btnbuscar;
     public javax.swing.JButton btneliminar;
@@ -536,6 +571,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -545,10 +581,12 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -562,6 +600,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblFondo1;
     private javax.swing.JPanel panelBotones;
     private javax.swing.JPanel panelCitas;
     private javax.swing.JPanel panelPacientes;
@@ -571,6 +610,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField txtDNIPer;
     private javax.swing.JTextField txtNombrePer;
     private javax.swing.JPasswordField txtPass;
+    private javax.swing.JPasswordField txtPass1;
     private javax.swing.JTextField txtUsuario;
+    private javax.swing.JTextField txtUsuario1;
     // End of variables declaration//GEN-END:variables
 }
