@@ -84,6 +84,56 @@ public class Modelo extends Database {
         return listmodel;
     }
     
+    public Object[] getInfoEmpleados(String nif) {
+        Object[] info = new Object[6];
+        try {
+            String q = "SELECT e.idEmpleado, p.nombre, p.apellidos, p.fechaNac, p.telefono, p.direccion FROM Empleado e, Personas p WHERE p.nif = '" + nif + "'";
+            PreparedStatement pstm = this.getConexion().prepareStatement(q);
+            ResultSet res = pstm.executeQuery();
+            while (res.next()) {
+                info[0] = res.getInt("e.idEmpleado");
+                info[1] = res.getString("p.nombre");
+                info[2] = res.getString("p.apellidos");
+                info[3] = res.getString("p.fechaNac");
+                info[4] = res.getDouble("p.telefono");
+                info[5] = res.getString("p.direccion");
+            }
+            res.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al obtener datos\n\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        return info;
+    }
+    
+    public Object[] getInfoPorIDCita(String idCita, int nif) {
+        Object[] info = new Object[8];
+        try {
+            String q = "SELECT c.idCita, c.idPaciente, p.nombre, p.apellidos, c.idEmpleado, c.fecha, c.motivo, c.recibo FROM Citas c, Personas p WHERE idCita = " + idCita + " AND p.nif = " + nif;
+            PreparedStatement pstm = this.getConexion().prepareStatement(q);
+            ResultSet res = pstm.executeQuery();
+            while (res.next()) {
+                info[0] = res.getInt("c.idCita");
+                info[1] = res.getString("c.idPaciente");
+                info[2] = res.getString("p.nombre");
+                info[3] = res.getString("p.apellidos");
+                info[4] = res.getString("c.idEmpleado");
+                info[5] = res.getString("c.fecha");
+                info[6] = res.getDouble("c.motivo");
+                info[7] = res.getString("c.recibo");
+                }
+            res.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al obtener datos de producto\n\n" + e.getMessage());
+            e.printStackTrace();
+        }
+        return info;
+    }
+    
+    
+    
+    
+    
     
     
     
