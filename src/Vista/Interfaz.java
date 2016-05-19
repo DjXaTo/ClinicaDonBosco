@@ -34,6 +34,7 @@ public class Interfaz extends javax.swing.JFrame {
         btnPacientes = new javax.swing.JLabel();
         btnPersonal = new javax.swing.JLabel();
         btnDesconectar = new javax.swing.JLabel();
+        btnPersonas = new javax.swing.JLabel();
         panelCitas = new javax.swing.JPanel();
         jCalendar1 = new com.toedter.calendar.JCalendar();
         jLabel1 = new javax.swing.JLabel();
@@ -49,6 +50,7 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         tablaCitas = new javax.swing.JTable();
         panelPrincipal = new javax.swing.JPanel();
+        panelPersonas = new javax.swing.JPanel();
         panelPacientes = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -170,6 +172,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         btnDesconectar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Close Window-100.png"))); // NOI18N
 
+        btnPersonas.setText("jLabel31");
+
         javax.swing.GroupLayout panelBotonesLayout = new javax.swing.GroupLayout(panelBotones);
         panelBotones.setLayout(panelBotonesLayout);
         panelBotonesLayout.setHorizontalGroup(
@@ -180,23 +184,26 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(btnPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(btnDesconectar)
                 .addGap(0, 0, 0))
         );
         panelBotonesLayout.setVerticalGroup(
             panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBotonesLayout.createSequentialGroup()
+            .addGroup(panelBotonesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnDesconectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPersonal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPacientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCitas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDesconectar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                    .addComponent(btnPersonal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPacientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPersonas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -308,6 +315,17 @@ public class Interfaz extends javax.swing.JFrame {
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 540, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout panelPersonasLayout = new javax.swing.GroupLayout(panelPersonas);
+        panelPersonas.setLayout(panelPersonasLayout);
+        panelPersonasLayout.setHorizontalGroup(
+            panelPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 743, Short.MAX_VALUE)
+        );
+        panelPersonasLayout.setVerticalGroup(
+            panelPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -518,6 +536,11 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(panelCitas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(frameAdminLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(panelPersonas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         frameAdminLayout.setVerticalGroup(
             frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -531,6 +554,11 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelPersonal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(frameAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameAdminLayout.createSequentialGroup()
+                    .addContainerGap(147, Short.MAX_VALUE)
+                    .addComponent(panelPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
 
         frameMedicos.setEnabled(false);
@@ -978,7 +1006,7 @@ public class Interfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser DateChoserFecPer;
     public javax.swing.JLabel btnCitas;
-    private javax.swing.JButton btnConectar;
+    public javax.swing.JButton btnConectar;
     private javax.swing.JButton btnConectar1;
     private javax.swing.JButton btnConfirmarCita;
     private javax.swing.JButton btnCrearCita;
@@ -986,9 +1014,10 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton btnImprimir;
     public javax.swing.JLabel btnPacientes;
     public javax.swing.JLabel btnPersonal;
+    public javax.swing.JLabel btnPersonas;
     public javax.swing.JLabel btnPrincipal;
     private javax.swing.JButton btnRestaurarCita;
-    private javax.swing.JButton btnSalir;
+    public javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSalir1;
     public javax.swing.JButton btnagregar;
     public javax.swing.JButton btnbuscar;
@@ -1019,7 +1048,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1030,7 +1059,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -1067,15 +1096,16 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JLabel lblFondo;
+    public javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblFondo1;
     private javax.swing.JPanel panelBotones;
-    private javax.swing.JPanel panelCitas;
+    public javax.swing.JPanel panelCitas;
     private javax.swing.JPanel panelCitas1;
     private javax.swing.JPanel panelDialogCitas;
-    private javax.swing.JPanel panelPacientes;
-    private javax.swing.JPanel panelPersonal;
-    private javax.swing.JPanel panelPrincipal;
+    public javax.swing.JPanel panelPacientes;
+    public javax.swing.JPanel panelPersonal;
+    public javax.swing.JPanel panelPersonas;
+    public javax.swing.JPanel panelPrincipal;
     private javax.swing.JTable tablaCitas;
     private javax.swing.JTable tablaPacientes;
     private javax.swing.JTextField txtApellidosPer;
@@ -1086,10 +1116,10 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomPac;
     private javax.swing.JTextField txtNombrePer;
     private javax.swing.JTextArea txtObservaciones;
-    private javax.swing.JPasswordField txtPass;
+    public javax.swing.JPasswordField txtPass;
     private javax.swing.JPasswordField txtPass1;
     private javax.swing.JFormattedTextField txtReciboCita;
-    private javax.swing.JTextField txtUsuario;
+    public javax.swing.JTextField txtUsuario;
     private javax.swing.JTextField txtUsuario1;
     // End of variables declaration//GEN-END:variables
 }

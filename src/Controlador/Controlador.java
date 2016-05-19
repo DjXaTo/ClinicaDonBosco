@@ -28,6 +28,32 @@ public class Controlador implements ActionListener, MouseListener {
         
     }
     
+    public enum AccionMVC
+    {
+        //Inicio de sesion
+        btnConectar,
+        btnSalir,
+        //Frame de administrativos
+            //Panel de botones
+        btnPrincipal,
+        btnCitas,
+        btnPersonas,
+        btnPacientes,
+        btnPersonal,
+        btnSalirAdmin,
+            //Panel principal
+            //Panel personas
+        
+            //Panel pacientes
+        
+            //Panel empleados
+            
+            //Panel citas
+        
+        //Frame de medicos
+            //Panel principal
+        
+    }
     public void iniciar() {
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -49,8 +75,119 @@ public class Controlador implements ActionListener, MouseListener {
         
         
         
+        //CONTROLAMOS OTRAS NECESIDADES COMO LOS MOUSELISTENER O LA VISIBILIDAD DE ALGUNOS PANELES            
+
+        vista.btnConectar.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e){
+                
+            }
+        });
         
+        vista.btnSalir.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e){
+                
+            }
+        });
         
+        vista.btnPrincipal.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e){
+                 vista.panelPrincipal.setVisible(true);
+                 vista.panelCitas.setVisible(false);
+                 vista.panelPersonas.setVisible(false);
+                 vista.panelPacientes.setVisible(false);
+                 vista.panelPersonal.setVisible(false);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                vista.btnPrincipal.setBorder(BorderFactory.createLineBorder(Color.black));
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                vista.btnPrincipal.setBorder(null);
+            }
+        });
+        
+        vista.btnCitas.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e){
+                 vista.panelPrincipal.setVisible(false);
+                 vista.panelCitas.setVisible(true);
+                 vista.panelPersonas.setVisible(false);
+                 vista.panelPacientes.setVisible(false);
+                 vista.panelPersonal.setVisible(false);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                vista.btnPrincipal.setBorder(BorderFactory.createLineBorder(Color.black));
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                vista.btnPrincipal.setBorder(null);
+            }
+        });
+        
+        vista.btnPersonas.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e){
+                 vista.panelPrincipal.setVisible(false);
+                 vista.panelCitas.setVisible(false);
+                 vista.panelPersonas.setVisible(true);
+                 vista.panelPacientes.setVisible(false);
+                 vista.panelPersonal.setVisible(false);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                vista.btnPrincipal.setBorder(BorderFactory.createLineBorder(Color.black));
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                vista.btnPrincipal.setBorder(null);
+            }
+        });
+        
+        vista.btnPacientes.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e){
+                 vista.panelPrincipal.setVisible(false);
+                 vista.panelCitas.setVisible(false);
+                 vista.panelPersonas.setVisible(false);
+                 vista.panelPacientes.setVisible(true);
+                 vista.panelPersonal.setVisible(false);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                vista.btnPrincipal.setBorder(BorderFactory.createLineBorder(Color.black));
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                vista.btnPrincipal.setBorder(null);
+            }
+        });
+        
+        vista.btnPersonal.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e){
+                 vista.panelPrincipal.setVisible(false);
+                 vista.panelCitas.setVisible(false);
+                 vista.panelPersonas.setVisible(false);
+                 vista.panelPacientes.setVisible(false);
+                 vista.panelPersonal.setVisible(true);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                vista.btnPrincipal.setBorder(BorderFactory.createLineBorder(Color.black));
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                vista.btnPrincipal.setBorder(null);
+            }
+        });
         
         vista.btnDesconectar.addMouseListener(new MouseAdapter() {
         
@@ -108,12 +245,7 @@ public class Controlador implements ActionListener, MouseListener {
     public void mouseExited(MouseEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    public enum AccionMVC
-    {
-        __btnagregar,
-        __btnbuscar,
-        __btneliminar,
-    }
+    
     
     
     
