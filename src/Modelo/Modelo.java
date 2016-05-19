@@ -147,7 +147,7 @@ public class Modelo extends Database {
     
 
     /** Obtiene registros de la tabla Personas y los devuelve en un DefaultTableModel*/
-    public DefaultTableModel getPersona()
+    public DefaultTableModel getPaciente()
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0;
@@ -177,6 +177,49 @@ public class Modelo extends Database {
                 data[i][2] = res.getString( "p.telefono");
                 data[i][3] = res.getString( "p.direccion");
                 data[i][4] = res.getString( "p.nif");
+                
+            i++;
+         }
+         res.close();
+         //se añade la matriz de datos en el DefaultTableModel
+         tablemodel.setDataVector(data, columNames );
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return tablemodel;
+    }
+    public DefaultTableModel getPersona()
+    {
+      DefaultTableModel tablemodel = new DefaultTableModel();
+      int registros = 0;
+      String[] columNames = {"nombre", "apellidos", "fechaNac" ,"aseguradora", "telefono", "direccion", "nif"};
+      //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
+      //para formar la matriz de datos
+      try{
+         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as total FROM Paciente");
+         ResultSet res = pstm.executeQuery();
+         res.next();
+         registros = res.getInt("total");
+         res.close();
+      }catch(SQLException e){
+         System.err.println( e.getMessage() );
+      }
+    //se crea una matriz con tantas filas y columnas que necesite
+    Object[][] data = new String[registros][7];
+      try{
+          //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
+         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT p.nombre, p.apellidos, p.fechaNac, b.aseguradora, p.telefono, p.direccion, p.nif FROM Personas p, Paciente b");
+         ResultSet res = pstm.executeQuery();
+         int i=0;
+         while(res.next()){
+                
+                data[i][0] = res.getString( "p.nombre" );
+                data[i][1] = res.getString( "p.apellidos" );
+                data[i][2] = res.getString( "p.fechaNac" );
+                data[i][3] = res.getString( "b.aseguradora" );
+                data[i][4] = res.getString( "p.telefono");
+                data[i][5] = res.getString( "p.direccion");
+                data[i][6] = res.getString( "p.nif");
                 
             i++;
          }

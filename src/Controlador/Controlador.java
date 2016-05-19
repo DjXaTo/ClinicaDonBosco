@@ -33,8 +33,8 @@ public class Controlador implements ActionListener, MouseListener {
     public enum Clinica
     {
         //Inicio de sesion
-        btnConectar,
-        btnSalir,
+        btnConectar,//
+        btnSalir, //
         //Frame de administrativos
             //Panel de botones
         btnPrincipal,
@@ -42,9 +42,14 @@ public class Controlador implements ActionListener, MouseListener {
         btnPersonas,
         btnPacientes,
         btnPersonal,
-        btnSalirAdmin,
-        btnBuscar,
-        btnModificar,
+        btnSalirAdmin, //
+        btnListarPac, //
+        btnModificarPac, //
+        btnListarPer, //
+        btnconverPac, //
+        btnconverEm, //
+        btnModificarPer, //
+        
             //Panel principal
             //Panel personas
         
@@ -68,15 +73,39 @@ public class Controlador implements ActionListener, MouseListener {
           catch (InstantiationException ex) {}
           catch (IllegalAccessException ex) {}
         
-        this.vista.btnAgregar.setActionCommand("btnAgregar");
-        this.vista.btnAgregar.addActionListener((ActionListener) this);
+        this.vista.btnlistarPer.setActionCommand("btnlistarPer");
+        this.vista.btnlistarPer.addActionListener((ActionListener) this);
         
-        this.vista.btnBuscarPac.setActionCommand("btnBuscar");
-        this.vista.btnBuscarPac.addActionListener((ActionListener) this);
+        this.vista.btnModificarPac.setActionCommand("btnModificarPac");
+        this.vista.btnModificarPac.addActionListener((ActionListener) this);
         
-        this.vista.btnEliminar.setActionCommand("btnEliminar");
-        this.vista.btnEliminar.addActionListener((ActionListener) this);
+        this.vista.btnModificarPer.setActionCommand("btnModificarPac");
+        this.vista.btnModificarPer.addActionListener((ActionListener) this);
         
+        this.vista.btnconverEm.setActionCommand("btnconverEm");
+        this.vista.btnconverEm.addActionListener((ActionListener) this);
+        
+        this.vista.btnlistarPac.setActionCommand("btnlistarPac");
+        this.vista.btnlistarPac.addActionListener((ActionListener) this);
+        
+        this.vista.btnconverPac.setActionCommand("btnconverPac");
+        this.vista.btnconverPac.addActionListener((ActionListener) this);
+        
+        this.vista.btnSalirAdmin.setActionCommand("btnSalirAdmin");
+        this.vista.btnSalirAdmin.addActionListener((ActionListener) this);
+        
+        this.vista.btnSalir.setActionCommand("btnSalir");
+        this.vista.btnSalir.addActionListener((ActionListener) this);
+        
+        this.vista.btnConectar.setActionCommand(" btnConectar");
+        this.vista.btnConectar.addActionListener((ActionListener) this);
+        
+        
+        
+        
+        
+        
+      
         
         
         //CONTROLAMOS OTRAS NECESIDADES COMO LOS MOUSELISTENER O LA VISIBILIDAD DE ALGUNOS PANELES            
@@ -224,28 +253,23 @@ public class Controlador implements ActionListener, MouseListener {
     public void actionPerformed(ActionEvent e) {
          switch ( Clinica.valueOf( e.getActionCommand() ) )
         {
-            case btnBuscar:
+            case btnListarPac:
                 //obtiene del modelo los registros en un DefaultTableModel y lo asigna en la vista
-                this.modelo.getPersona();
+                this.modelo.getPaciente();
                        
                 break;
-            case btnmodificar:
-                //añade un nuevo registro
-               this.modelo.
+            case btnListarPer:
+                this.modelo.getPersona();
+               
                 break;
-            case:
-                if ( this.modelo.EliminarProducto( this.vista.__id_producto.getText() ) )
-                {
-                    this.vista.__tabla_producto.setModel( this.modelo.getTablaProducto() );
-                    JOptionPane.showMessageDialog(vista,"Exito: Registro eliminado.");
-                    this.vista.__id_producto.setText("");
-                    this.vista.__nombre.setText("") ;
-                    this.vista.__precio.setText("0");
-                    this.vista.__cantidad.setText("0") ;
-                }
-                break;       
+            case btnModificarPac:
+               
+                break;
+            case btnModificarPer:
+                
+                break;
+                
         }
-    }
         
        
     }
