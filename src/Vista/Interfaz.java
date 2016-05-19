@@ -1277,7 +1277,7 @@ public class Interfaz extends javax.swing.JFrame {
     public javax.swing.JTextField txtdireccionPac;
     public javax.swing.JTextField txtdireccionPer;
     public javax.swing.JTextField txtdni;
-    private com.toedter.calendar.JDateChooser txtfechanacPer;
+    public com.toedter.calendar.JDateChooser txtfechanacPer;
     public javax.swing.JTextField txtnombrePac;
     public javax.swing.JTextField txtnombrePer;
     public javax.swing.JTextField txttelefonoPac;
