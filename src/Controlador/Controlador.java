@@ -11,7 +11,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.Date;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -24,11 +26,11 @@ public class Controlador implements ActionListener, MouseListener {
     Modelo modelo = new Modelo(); //PARA PODER ACCEDER AL MODELO Y A LOS DATOS DE LA BD
 
     public Controlador(Interfaz i) {
-        vista = i;
+        this.vista = i;
         
     }
     
-    public enum AccionMVC
+    public enum Clinica
     {
         //Inicio de sesion
         btnConectar,
@@ -41,6 +43,8 @@ public class Controlador implements ActionListener, MouseListener {
         btnPacientes,
         btnPersonal,
         btnSalirAdmin,
+        btnBuscar,
+        btnModificar,
             //Panel principal
             //Panel personas
         
@@ -64,14 +68,14 @@ public class Controlador implements ActionListener, MouseListener {
           catch (InstantiationException ex) {}
           catch (IllegalAccessException ex) {}
         
-        this.vista.btnagregar.setActionCommand("_btnagregar");
-        this.vista.btnagregar.addActionListener((ActionListener) this);
+        this.vista.btnAgregar.setActionCommand("btnAgregar");
+        this.vista.btnAgregar.addActionListener((ActionListener) this);
         
-        this.vista.btnbuscar.setActionCommand("_btnbuscar");
-        this.vista.btnbuscar.addActionListener((ActionListener) this);
+        this.vista.btnBuscarPac.setActionCommand("btnBuscar");
+        this.vista.btnBuscarPac.addActionListener((ActionListener) this);
         
-        this.vista.btneliminar.setActionCommand("_btneliminar");
-        this.vista.btneliminar.addActionListener((ActionListener) this);
+        this.vista.btnEliminar.setActionCommand("btnEliminar");
+        this.vista.btnEliminar.addActionListener((ActionListener) this);
         
         
         
@@ -218,7 +222,32 @@ public class Controlador implements ActionListener, MouseListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         switch ( Clinica.valueOf( e.getActionCommand() ) )
+        {
+            case btnBuscar:
+                //obtiene del modelo los registros en un DefaultTableModel y lo asigna en la vista
+                this.modelo.getPersona();
+                       
+                break;
+            case btnmodificar:
+                //añade un nuevo registro
+               this.modelo.
+                break;
+            case:
+                if ( this.modelo.EliminarProducto( this.vista.__id_producto.getText() ) )
+                {
+                    this.vista.__tabla_producto.setModel( this.modelo.getTablaProducto() );
+                    JOptionPane.showMessageDialog(vista,"Exito: Registro eliminado.");
+                    this.vista.__id_producto.setText("");
+                    this.vista.__nombre.setText("") ;
+                    this.vista.__precio.setText("0");
+                    this.vista.__cantidad.setText("0") ;
+                }
+                break;       
+        }
+    }
+        
+       
     }
 
     @Override

@@ -146,12 +146,12 @@ public class Modelo extends Database {
     }
     
 
-    /** Obtiene registros de la tabla PRODUCTO y los devuelve en un DefaultTableModel*/
-    public DefaultTableModel getPaciente()
+    /** Obtiene registros de la tabla Personas y los devuelve en un DefaultTableModel*/
+    public DefaultTableModel getPersona()
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0;
-      String[] columNames = {"idPaciente","nif","aseguradora"};
+      String[] columNames = {"nombre","aseguradora", "telefono", "direccion", "nif"};
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
@@ -164,16 +164,19 @@ public class Modelo extends Database {
          System.err.println( e.getMessage() );
       }
     //se crea una matriz con tantas filas y columnas que necesite
-    Object[][] data = new String[registros][3];
+    Object[][] data = new String[registros][5];
       try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT * FROM Paciente");
+         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT p.nombre, b.aseguradora, p.telefono, p.direccion, p.nif FROM Personas p, Paciente b");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
-                data[i][0] = res.getString( "idPaciente" );
-                data[i][1] = res.getString( "nif" );
-                data[i][2] = res.getString( "aseguradora" );
+                
+                data[i][0] = res.getString( "p.nombre" );
+                data[i][1] = res.getString( "b.aseguradora" );
+                data[i][2] = res.getString( "p.telefono");
+                data[i][3] = res.getString( "p.direccion");
+                data[i][4] = res.getString( "p.nif");
                 
             i++;
          }
@@ -186,15 +189,16 @@ public class Modelo extends Database {
         return tablemodel;
     }
 
-    /** Registra un nuevo producto */
-    public boolean NuevoPaciente(String idPaciente, int nif , String aseguradora)
+
+     
+    public boolean NuevaPersona(int DNI,String Nombre ,String Apellidos, Date fechaNac, int telefono, String direccion)
     {
        
         
             
             //Se arma la consulta
-            String q=" INSERT INTO Paciente ( idPaciente , nif , aseguradora) "
-                    + "VALUES ( '" + idPaciente + "','" + nif + "', '" + aseguradora + ") ";
+            String q=" INSERT INTO Personas (nif, nombre, apellidos, fechaNac, telefono, direccion) "
+                    + "VALUES (" + DNI + "','" + Nombre + "', '" + Apellidos + "', '" + fechaNac + "', '" + telefono + "', '" + direccion + ") ";
             //se ejecuta la consulta
             try {
                 PreparedStatement pstm = this.getConexion().prepareStatement(q);
@@ -211,11 +215,11 @@ public class Modelo extends Database {
 
 
     /** Elimina un registro dado su ID -> Llave primaria */
-    public boolean EliminarPaciente( String idPaciente )
+    public boolean EliminarPersona( String nombre )
     {
          boolean res=false;
         //se arma la consulta
-        String q = " DELETE FROM Paciente WHERE  idPaciente='" + idPaciente + "'";
+        String q = " DELETE FROM Paciente WHERE  nombre='" + nombre + "'";
         //se ejecuta la consulta
          try {
             PreparedStatement pstm = this.getConexion().prepareStatement(q);
