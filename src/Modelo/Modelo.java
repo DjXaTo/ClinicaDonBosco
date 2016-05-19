@@ -255,6 +255,48 @@ public class Modelo extends Database {
         
         
     }
+    public boolean modificarPer(String Nombre ,String Apellidos, Date FechaNac, int telefono, String direccion)
+    {
+       
+        
+            
+            //Se arma la consulta
+            String q=" UPDATE  INTO Personas (nombre, apellidos, fechaNac, telefono, direccion) "
+                    + "VALUES (" + Nombre+ "','" + Apellidos + "', '" + FechaNac+ "', '" + telefono + "', '" + direccion + ") ";
+            //se ejecuta la consulta
+            try {
+                PreparedStatement pstm = this.getConexion().prepareStatement(q);
+                pstm.execute();
+                pstm.close();
+                return true;
+            }catch(SQLException e){
+                System.err.println( e.getMessage() );
+            }
+            return false;
+        
+        
+    }
+     public boolean modificarPac(String Nombre ,String aseguradora, int telefono, String direccion)
+    {
+       
+        
+            
+            //Se arma la consulta
+            String q=" UPDATE  INTO Personas (nombre, apellidos, fechaNac, telefono, direccion) "
+                    + "VALUES (" + Nombre+ "','" + aseguradora + "', '" + telefono + "', '" + direccion + ") ";
+            //se ejecuta la consulta
+            try {
+                PreparedStatement pstm = this.getConexion().prepareStatement(q);
+                pstm.execute();
+                pstm.close();
+                return true;
+            }catch(SQLException e){
+                System.err.println( e.getMessage() );
+            }
+            return false;
+        
+        
+    }
 
 
     /** Elimina un registro dado su ID -> Llave primaria */
