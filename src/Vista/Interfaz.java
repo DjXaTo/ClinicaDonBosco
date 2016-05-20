@@ -103,7 +103,7 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         txtMedico = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<String>();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         txtNomPac = new javax.swing.JTextField();
@@ -704,7 +704,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel19.setText("Médico:");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel20.setText("Cita:");
 
@@ -1277,7 +1277,7 @@ public class Interfaz extends javax.swing.JFrame {
     public javax.swing.JTextField txtdireccionPac;
     public javax.swing.JTextField txtdireccionPer;
     public javax.swing.JTextField txtdni;
-    public com.toedter.calendar.JDateChooser txtfechanacPer;
+    private com.toedter.calendar.JDateChooser txtfechanacPer;
     public javax.swing.JTextField txtnombrePac;
     public javax.swing.JTextField txtnombrePer;
     public javax.swing.JTextField txttelefonoPac;

@@ -278,12 +278,12 @@ public class Modelo extends Database {
     }
      public boolean modificarPac(String Nombre ,String aseguradora, int telefono, String direccion)
     {
-        sdsf
+        
        
         
             
             //Se arma la consulta
-            String q=" UPDATE  INTO Personas (nombre, apellidos, fechaNac, telefono, direccion) "
+            String q=" UPDATE  INTO Paciente (nombre, apellidos, fechaNac, telefono, direccion) "
                     + "VALUES (" + Nombre+ "','" + aseguradora + "', '" + telefono + "', '" + direccion + ") ";
             //se ejecuta la consulta
             try {
