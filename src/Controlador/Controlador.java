@@ -267,9 +267,11 @@ public class Controlador implements ActionListener, MouseListener {
                
                 break;
             case btnModificarPer:
-                this.modelo.modificarPer(vista.txtnombrePer.getText(),vista.txtapellidosPer.getText(), (date)vista.txtfechanacPer.getdate(),Integer.parseInt(vista.txttelefonoPer.getText()),vista.txtdireccionPer.getText());
+                this.modelo.modificarPer(vista.txtnombrePer.getText(),vista.txtapellidosPer.getText(), (Date)vista.txtfechanacPer.getdate(),Integer.parseInt(vista.txttelefonoPer.getText()),vista.txtdireccionPer.getText());
                 
-                break btn;
+                break;
+            case btnconverEm:
+                this.modelo.converEm(Integer.parseInt(vista.btnconverEm.getText()));
                 
         }
         
