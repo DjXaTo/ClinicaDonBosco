@@ -235,7 +235,7 @@
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jTextField14" min="-2" pref="108" max="-2" attributes="0"/>
+                                                  <Component id="txtDNIpersona" min="-2" pref="108" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
@@ -288,7 +288,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField14" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtDNIpersona" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txttelefonoPer" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -339,6 +339,9 @@
                           </Table>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -379,7 +382,7 @@
                     <Property name="text" type="java.lang.String" value="DNI:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField14">
+                <Component class="javax.swing.JTextField" name="txtDNIpersona">
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
@@ -425,6 +428,9 @@
                   </AuxValues>
                 </Component>
                 <Component class="com.toedter.calendar.JDateChooser" name="txtfechanacPer">
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txttelefonoPer">
                   <AuxValues>
@@ -534,6 +540,9 @@
                           </Table>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>

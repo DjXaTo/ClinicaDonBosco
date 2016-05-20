@@ -110,8 +110,30 @@ public class Controlador implements ActionListener, MouseListener {
         
         //CONTROLAMOS OTRAS NECESIDADES COMO LOS MOUSELISTENER O LA VISIBILIDAD DE ALGUNOS PANELES            
 
-        vista.btnConectar.addMouseListener(new MouseAdapter() {
+        vista.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e){
+                
+                if( e.getButton()== 1)//boton izquierdo
+        {
+             int filaPaciente =vista.tablaPacientes.rowAtPoint(e.getPoint());
+             int filaPersona =vista.tablaPersonas.rowAtPoint(e.getPoint());
+             
+             if (filaPaciente > -1){                
+                vista.txtDNIPacientes.setText(vista.tablaPacientes.getValueAt(vista.tablaPacientes.getSelectedRow(), 0).toString());
+                vista.txtaseguradoraPac.setText(vista.tablaPacientes.getValueAt(vista.tablaPacientes.getSelectedRow(), 0).toString());
+                
+             if (filaPersona >-1){
+                vista.txtDNIpersona.setText(vista.tablaPersonas.getValueAt(vista.tablaPersonas.getSelectedRow(), 0).toString());
+                vista.txtnombrePer.setText(vista.tablaPersonas.getValueAt(vista.tablaPersonas.getSelectedRow(), 0).toString());
+                vista.txtapellidosPer.setText(vista.tablaPersonas.getValueAt(vista.tablaPersonas.getSelectedRow(), 0).toString());
+                vista.txtdireccionPer.setText(vista.tablaPersonas.getValueAt(vista.tablaPersonas.getSelectedRow(), 0).toString());
+                vista.txttelefonoPer.setText(vista.tablaPersonas.getValueAt(vista.tablaPersonas.getSelectedRow(), 0).toString());
+                vista.txtfechanacPer.setText(vista.tablaPersonas.getValueAt(vista.tablaPersonas.getSelectedRow(), 0).toString());
+                 
+                 
+             }
+             
+        }
                 
             }
         });
@@ -263,15 +285,15 @@ public class Controlador implements ActionListener, MouseListener {
                
                 break;
             case btnModificarPac:
-                this.modelo.modificarPac(vista.txtnombrePac.getText(), vista.txtaseguradoraPac.getText(),Integer.parseInt(vista.txttelefonoPac.getText()),vista.txtdireccionPac.getText());
+                this.modelo.modificarPac(vista.txtaseguradoraPac.getText());
                
                 break;
             case btnModificarPer:
-                this.modelo.modificarPer(vista.txtnombrePer.getText(),vista.txtapellidosPer.getText(), (Date)vista.txtfechanacPer.getdate(),Integer.parseInt(vista.txttelefonoPer.getText()),vista.txtdireccionPer.getText());
+                this.modelo.modificarPer(vista.txtnombrePer.getText(),vista.txtapellidosPer.getText(),(Date) vista.txtfechanacPer.getDate(),Integer.parseInt(vista.txttelefonoPer.getText()),vista.txtdireccionPer.getText());
                 
                 break;
             case btnconverEm:
-                this.modelo.converEm(Integer.parseInt(vista.btnconverEm.getText()));
+                break;
                 
         }
         

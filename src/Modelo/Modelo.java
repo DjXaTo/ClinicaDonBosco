@@ -256,11 +256,7 @@ public class Modelo extends Database {
         
         
     }
-     public intr getValueAt(fila, columna){
-         
-         
-         
-     } 
+      
     public boolean modificarPer(String Nombre ,String Apellidos, Date FechaNac, int telefono, String direccion)
     {
        
@@ -282,15 +278,15 @@ public class Modelo extends Database {
         
         
     }
-     public boolean modificarPac(String Nombre ,String aseguradora, int telefono, String direccion)
+     public boolean modificarPac(String aseguradora)
     {
         
        
         
             
             //Se arma la consulta
-            String q=" UPDATE  INTO Paciente (nombre, apellidos, fechaNac, telefono, direccion) "
-                    + "VALUES (" + Nombre+ "','" + aseguradora + "', '" + telefono + "', '" + direccion + ") ";
+            String q=" UPDATE  INTO Paciente (aseguradora) "
+                    + "VALUES (" + aseguradora + ") ";
             //se ejecuta la consulta
             try {
                 PreparedStatement pstm = this.getConexion().prepareStatement(q);

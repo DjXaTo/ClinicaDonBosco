@@ -50,7 +50,7 @@ public class Interfaz extends javax.swing.JFrame {
         btnconverEm = new javax.swing.JButton();
         btnModificarPer = new javax.swing.JButton();
         jLabel38 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        txtDNIpersona = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
@@ -91,7 +91,7 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         txtMedico = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<String>();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         txtNomPac = new javax.swing.JTextField();
@@ -316,7 +316,7 @@ public class Interfaz extends javax.swing.JFrame {
                                     .addGroup(panelPersonasLayout.createSequentialGroup()
                                         .addComponent(jLabel38)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtDNIpersona, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(panelPersonasLayout.createSequentialGroup()
                                         .addComponent(jLabel39)
                                         .addGap(18, 18, 18)
@@ -353,7 +353,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDNIpersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
                     .addComponent(txttelefonoPer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -597,7 +597,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel19.setText("Médico:");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel20.setText("Cita:");
 
@@ -1189,7 +1189,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
-    public javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
@@ -1208,12 +1207,13 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JRadioButton rBtnMedico;
     private javax.swing.JPanel subPanelEmpleados;
     private javax.swing.JTable tablaCitas;
-    private javax.swing.JTable tablaPacientes;
+    public javax.swing.JTable tablaPacientes;
     private javax.swing.JTable tablaPacientesCitas;
     private javax.swing.JTable tablaPersonal;
-    private javax.swing.JTable tablaPersonas;
+    public javax.swing.JTable tablaPersonas;
     public javax.swing.JTextField txtDNIPacientes;
     private javax.swing.JTextField txtDNIPer;
+    public javax.swing.JTextField txtDNIpersona;
     private javax.swing.JTextField txtEspecialidad;
     private javax.swing.JLabel txtMedico;
     private javax.swing.JTextField txtMotivoCon;
@@ -1228,7 +1228,7 @@ public class Interfaz extends javax.swing.JFrame {
     public javax.swing.JTextField txtapellidosPer;
     public javax.swing.JTextField txtaseguradoraPac;
     public javax.swing.JTextField txtdireccionPer;
-    private com.toedter.calendar.JDateChooser txtfechanacPer;
+    public com.toedter.calendar.JDateChooser txtfechanacPer;
     public javax.swing.JTextField txtnombrePer;
     public javax.swing.JTextField txttelefonoPer;
     // End of variables declaration//GEN-END:variables
