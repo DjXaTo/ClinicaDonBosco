@@ -1110,7 +1110,7 @@ public class Interfaz extends javax.swing.JFrame {
     public javax.swing.JButton btnConectar;
     private javax.swing.JButton btnConectar1;
     private javax.swing.JButton btnConfirmarCita;
-    private javax.swing.JButton btnCrearCita;
+    public javax.swing.JButton btnCrearCita;
     public javax.swing.JLabel btnDesconectar;
     private javax.swing.ButtonGroup btnGroupEmpleados;
     private javax.swing.JButton btnImprimir;
@@ -1128,7 +1128,7 @@ public class Interfaz extends javax.swing.JFrame {
     public javax.swing.JButton btnconverEm;
     public javax.swing.JButton btnconverPac;
     public javax.swing.JButton btnlistarPac;
-    private javax.swing.JDialog dialogCita;
+    public javax.swing.JDialog dialogCita;
     public javax.swing.JFrame frameAdmin;
     private javax.swing.JFrame frameMedicos;
     private javax.swing.JButton jButton2;
